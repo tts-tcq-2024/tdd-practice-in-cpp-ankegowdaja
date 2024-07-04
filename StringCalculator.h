@@ -8,4 +8,4 @@ public:
     int add(const std::string& input);
 };
 
-#endif // STRINGCALCULATOR_H
+#endif 
