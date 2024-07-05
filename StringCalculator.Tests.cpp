@@ -19,7 +19,7 @@ TEST(StringCalculatorAddTests, ExpectZeroForSingleZero) {
     ASSERT_EQ(result, expectedresult);
 }
 
-/*TEST(StringCalculatorAddTests, ExpectSumForTwoNumbers) {
+TEST(StringCalculatorAddTests, ExpectSumForTwoNumbers) {
     int expectedresult = 3;
     std::string input = "1,2";
     StringCalculator objUnderTest;
@@ -36,7 +36,7 @@ TEST(StringCalculatorAddTests, ExpectExceptionForNegativeNumbers) {
         }, std::runtime_error);
 }
 
-TEST(StringCalculatorAddTests, ExpectSumWithNewlineDelimiter) {
+/*TEST(StringCalculatorAddTests, ExpectSumWithNewlineDelimiter) {
     int expectedresult = 6;
     std::string input = "1\n2,3";
      StringCalculator objUnderTest;
