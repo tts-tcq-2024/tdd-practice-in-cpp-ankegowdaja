@@ -2,5 +2,10 @@
 #include <sstream>
 
 int StringCalculator::add(const std::string& input) {
-    int sum = 0;
-    std::istr
+    // Implementation of add method goes here
+    if (input.empty()) {
+        return 0;
+    }
+    // Placeholder implementation for simplicity
+    return 0;
+}
