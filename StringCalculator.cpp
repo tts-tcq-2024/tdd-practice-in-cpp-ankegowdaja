@@ -2,22 +2,6 @@
 #include <sstream>
 #include <algorithm>
 
-
-int StringCalculator::add(const std::string& input) {
-  if (input.empty()) {
-        return 0;
-    }
-   if (input == "0") {
-        return 0;
-    }
-
-  std::string processedInput = handleCustomDelimiter(input);
-  processedInput = normalizeDelimiters(processedInput);
-  checkForNegativeNumbers(processedInput);
-  return sumOfNumbers(processedInput);  
-    
-}
-
 int StringCalculator::sumOfNumbers(const std::string& input) {
     std::istringstream stream(input);
     std::string number;
@@ -56,3 +40,20 @@ std::string StringCalculator::handleCustomDelimiter(const std::string& input) {
     }
     return input;
 }
+
+int StringCalculator::add(const std::string& input) {
+  if (input.empty()) {
+        return 0;
+    }
+   if (input == "0") {
+        return 0;
+    }
+
+  std::string processedInput = handleCustomDelimiter(input);
+  processedInput = normalizeDelimiters(processedInput);
+  checkForNegativeNumbers(processedInput);
+  return sumOfNumbers(processedInput);  
+    
+}
+
+
