@@ -9,7 +9,7 @@ public:
     int addofnum(const std::string& input);
     void verify_NegativeNum(const std::string& input);
     std::string normalizeDelimiters(const std::string& input);
-    std::string handleCustomDelimiter(const std::string& input);   
+    std::string newlinecheck(const std::string& input);   
  };
 
 #endif 
