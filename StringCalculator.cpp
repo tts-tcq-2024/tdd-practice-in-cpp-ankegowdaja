@@ -30,15 +30,7 @@ int StringCalculator::sumOfNumbers(const std::string& input) {
     return sum;
 }
 
-std::string StringCalculator::newlinecheck(const std::string& input) {
-    if (input.substr(0, 2) == "//") {
-        std::string delimiter = input.substr(2, input.find('\n') - 2);
-        std::string rest = input.substr(input.find('\n') + 1);
-        std::replace(rest.begin(), rest.end(), delimiter[0], ',');
-        return rest;
-    }
-    return input;
-}
+
 
 void StringCalculator::verifiy_negative_numbers(const std::string& input) {
     std::istringstream stream(input);
@@ -54,6 +46,16 @@ std::string StringCalculator::Delimeterseperation(const std::string& input) {
     std::string result = input;
     std::replace(result.begin(), result.end(), '\n', ',');
     return result;
+}
+
+std::string StringCalculator::newlinecheck(const std::string& input) {
+    if (input.substr(0, 2) == "//") {
+        std::string delimiter = input.substr(2, input.find('\n') - 2);
+        std::string rest = input.substr(input.find('\n') + 1);
+        std::replace(rest.begin(), rest.end(), delimiter[0], ',');
+        return rest;
+    }
+    return input;
 }
 
 
