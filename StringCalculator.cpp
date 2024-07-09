@@ -1,5 +1,7 @@
 #include "StringCalculator.h"
 #include <sstream>
+#include <stdexcept>
+#include <vector>
 #include <algorithm>
 
 int StringCalculator::add(const std::string& input) {
