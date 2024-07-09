@@ -2,10 +2,6 @@
 #include <sstream>
 #include <algorithm>
  
-int StringCalculator::add(const std::string& input) {
-    /*if (isEmptyOrZero(input)) {
-        return 0;
-    } */
   if (input.empty()) {
         return 0;
     }
@@ -19,11 +15,6 @@ int StringCalculator::add(const std::string& input) {
     return sumOfNumbers(processedInput);
 }
 
-/*
-bool StringCalculator::isEmptyOrZero(const std::string& input) {
-    return input.empty() || input == "0";
-}*/
- 
 int StringCalculator::sumOfNumbers(const std::string& input) {
     std::istringstream stream(input);
     std::string number;
