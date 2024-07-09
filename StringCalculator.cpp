@@ -13,10 +13,10 @@ int StringCalculator::add(const std::string& input) {
         return 0;
     }
 
-  std::string processedInput = handleCustomDelimiter(input);
-  processedInput = normalizeDelimiters(processedInput);
-  verify_NegativeNum(processedInput);
-  return addofnum(processedInput);  
+  std::string filteredinput = newlinecheck(input);
+  filteredinput = normalizeDelimiters(filteredinput);
+  verify_NegativeNum(filteredinput);
+  return addofnum(filteredinput);  
     
 }
 
@@ -50,7 +50,7 @@ std::string StringCalculator::normalizeDelimiters(const std::string& input) {
     return result;
 }
 
-std::string StringCalculator::handleCustomDelimiter(const std::string& input) {
+std::string StringCalculator::newlinecheck(const std::string& input) {
     if (input.substr(0, 2) == "//") {
         std::string delimiter = input.substr(2, input.find('\n') - 2);
         std::string rest = input.substr(input.find('\n') + 1);
