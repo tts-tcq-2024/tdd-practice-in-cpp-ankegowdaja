@@ -12,24 +12,13 @@ int StringCalculator::add(const std::string& input) {
     }
 
   std::string processedInput = handleCustomDelimiter(input);
-    processedInput = normalizeDelimiters(processedInput);
-    checkForNegativeNumbers(processedInput);
-    //return sumOfNumbers(processedInput);
-   std::istringstream stream(input);
-    std::string number;
-    int sum = 0;
-    while (std::getline(stream, number, ',')) {
-        int num = std::stoi(number);
-        if (num <=1000) {
-         sum += num;
-        }
-    }
-    return sum;
-  
+  processedInput = normalizeDelimiters(processedInput);
+  checkForNegativeNumbers(processedInput);
+  return sumOfNumbers(processedInput);  
     
 }
 
-/*int StringCalculator::sumOfNumbers(const std::string& input) {
+int StringCalculator::sumOfNumbers(const std::string& input) {
     std::istringstream stream(input);
     std::string number;
     int sum = 0;
@@ -40,7 +29,7 @@ int StringCalculator::add(const std::string& input) {
         }
     }
     return sum;
-}*/
+}
 
 void StringCalculator::checkForNegativeNumbers(const std::string& input) {
     std::istringstream stream(input);
