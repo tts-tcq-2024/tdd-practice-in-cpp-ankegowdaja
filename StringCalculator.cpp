@@ -10,23 +10,16 @@ int StringCalculator::add(const std::string& input) {
     if (input == "0") {
         return 0;
     }
-
-    // Split input string by comma
-    std::istringstream iss(input);
-    std::vector<int> numbers;
-    std::string token;
-
-    while (std::getline(iss, token, ',')) {
-        numbers.push_back(std::stoi(token));
-    }
-
-    // Calculate sum of numbers
+    std::istringstream stream(input);
+    std::string number;
     int sum = 0;
-    for (int num : numbers) {
-        sum += num;
+    while (std::getline(stream, number, ',')) {
+        int num = std::stoi(number);
+        if (num <=1000) {
+         sum += num;
+        }
     }
-
     return sum;
-    // Placeholder implementation for simplicity
-   // return 0;
+
+    
 }
