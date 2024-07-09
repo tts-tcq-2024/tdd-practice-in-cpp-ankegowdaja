@@ -15,7 +15,7 @@ int StringCalculator::add(const std::string& input) {
 
   std::string processedInput = handleCustomDelimiter(input);
   processedInput = normalizeDelimiters(processedInput);
-  checkForNegativeNumbers(processedInput);
+  verify_NegativeNum(processedInput);
   return addofnum(processedInput);  
     
 }
@@ -34,7 +34,7 @@ int StringCalculator::addofnum(const std::string& input) {
 }
 
 
-void StringCalculator::checkForNegativeNumbers(const std::string& input) {
+void StringCalculator::verify_NegativeNum(const std::string& input) {
     std::istringstream stream(input);
     std::string number;
     while (std::getline(stream, number, ',')) {
