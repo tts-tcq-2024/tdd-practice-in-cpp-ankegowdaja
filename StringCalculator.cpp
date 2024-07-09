@@ -2,6 +2,21 @@
 #include <sstream>
 #include <algorithm>
 
+int StringCalculator::addnum(const std::string& input) {
+  if (input.empty()) {
+        return 0;
+    }
+   if (input == "0") {
+        return 0;
+    }
+
+  std::string processedInput = newlinecheck(input);
+  processedInput = Delimeterseperation(processedInput);
+  verifiy_negative_numbers(processedInput);
+  return sumOfNumbers(processedInput);  
+    
+}
+
 int StringCalculator::sumOfNumbers(const std::string& input) {
     std::istringstream stream(input);
     std::string number;
@@ -41,19 +56,6 @@ std::string StringCalculator::Delimeterseperation(const std::string& input) {
     return result;
 }
 
-int StringCalculator::addnum(const std::string& input) {
-  if (input.empty()) {
-        return 0;
-    }
-   if (input == "0") {
-        return 0;
-    }
 
-  std::string processedInput = newlinecheck(input);
-  processedInput = Delimeterseperation(processedInput);
-  verifiy_negative_numbers(processedInput);
-  return sumOfNumbers(processedInput);  
-    
-}
 
 
