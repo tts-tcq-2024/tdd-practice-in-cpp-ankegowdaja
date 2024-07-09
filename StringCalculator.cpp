@@ -10,9 +10,9 @@ int StringCalculator::add(const std::string& input) {
         return 0;
     }
 
-  std::string processedInput = newlinecheck(input);
-  processedInput = Delimeterseperation(processedInput);
-  verifiy_negative_numbers(processedInput);
+  std::string processedInput = handleCustomDelimiter(input);
+  processedInput = normalizeDelimiters(processedInput);
+  checkForNegativeNumbers(processedInput);
   return sumOfNumbers(processedInput);  
     
 }
