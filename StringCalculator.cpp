@@ -11,6 +11,10 @@ int StringCalculator::add(const std::string& input) {
     if (input == "0") {
         return 0;
     }
+   
+}
+
+int StringCalculator::sumOfNumbers(const std::string& input) {
     std::istringstream stream(input);
     std::string number;
     int sum = 0;
@@ -21,6 +25,5 @@ int StringCalculator::add(const std::string& input) {
         }
     }
     return sum;
-
-    
 }
+
