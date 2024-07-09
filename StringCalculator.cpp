@@ -3,18 +3,26 @@
 #include <algorithm>
  
 int StringCalculator::add(const std::string& input) {
-    if (isEmptyOrZero(input)) {
+    /*if (isEmptyOrZero(input)) {
+        return 0;
+    } */
+  if (input.empty()) {
         return 0;
     }
+   if (input == "0") {
+        return 0;
+    }
+ 
     std::string processedInput = handleCustomDelimiter(input);
     processedInput = normalizeDelimiters(processedInput);
     checkForNegativeNumbers(processedInput);
     return sumOfNumbers(processedInput);
 }
 
+/*
 bool StringCalculator::isEmptyOrZero(const std::string& input) {
     return input.empty() || input == "0";
-}
+}*/
  
 int StringCalculator::sumOfNumbers(const std::string& input) {
     std::istringstream stream(input);
