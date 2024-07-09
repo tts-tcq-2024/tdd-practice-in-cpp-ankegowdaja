@@ -2,7 +2,7 @@
 #include <sstream>
 #include <algorithm>
 
-int StringCalculator::addnum(const std::string& input) {
+int StringCalculator::add(const std::string& input) {
   if (input.empty()) {
         return 0;
     }
