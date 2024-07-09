@@ -35,10 +35,23 @@ int StringCalculator::sumOfNumbers(const std::string& input) {
 void StringCalculator::checkForNegativeNumbers(const std::string& input) {
     std::istringstream stream(input);
     std::string number;
+    std::vector<int> negativeNumbers;
+
     while (std::getline(stream, number, ',')) {
-        if (std::stoi(number) < 0) {
-            throw std::runtime_error("Negative numbers not allowed");
+        int num = std::stoi(number);
+        if (num < 0) {
+            negativeNumbers.push_back(num);
         }
+    }
+
+    if (!negativeNumbers.empty()) {
+        std::ostringstream message;
+        message << "Negative numbers not allowed: ";
+        for (size_t i = 0; i < negativeNumbers.size(); ++i) {
+            if (i > 0) message << ", ";
+            message << negativeNumbers[i];
+        }
+        throw std::runtime_error(message.str());
     }
 }
 
