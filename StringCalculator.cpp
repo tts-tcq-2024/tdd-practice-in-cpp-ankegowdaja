@@ -1,10 +1,20 @@
 #include "StringCalculator.h"
 #include <sstream>
-#include <stdexcept>
-#include <string>
-#include <vector>
 #include <algorithm>
 
+
+int StringCalculator::addofnum(const std::string& input) {
+    std::istringstream stream(input);
+    std::string number;
+    int sum = 0;
+    while (std::getline(stream, number, ',')) {
+        int num = std::stoi(number);
+        if (num <=1000) {
+         sum += num;
+        }
+    }
+    return sum;
+}
 int StringCalculator::add(const std::string& input) {
   if (input.empty()) {
         return 0;
@@ -19,20 +29,6 @@ int StringCalculator::add(const std::string& input) {
   return addofnum(filteredinput);  
     
 }
-
-int StringCalculator::addofnum(const std::string& input) {
-    std::istringstream stream(input);
-    std::string number;
-    int sum = 0;
-    while (std::getline(stream, number, ',')) {
-        int num = std::stoi(number);
-        if (num <=1000) {
-         sum += num;
-        }
-    }
-    return sum;
-}
-
 
 void StringCalculator::verify_NegativeNum(const std::string& input) {
     std::istringstream stream(input);
