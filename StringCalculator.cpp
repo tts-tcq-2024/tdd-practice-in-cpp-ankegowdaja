@@ -16,11 +16,11 @@ int StringCalculator::add(const std::string& input) {
   std::string processedInput = handleCustomDelimiter(input);
   processedInput = normalizeDelimiters(processedInput);
   checkForNegativeNumbers(processedInput);
-  return sumOfNumbers(processedInput);  
+  return addofnum(processedInput);  
     
 }
 
-int StringCalculator::sumOfNumbers(const std::string& input) {
+int StringCalculator::addofnum(const std::string& input) {
     std::istringstream stream(input);
     std::string number;
     int sum = 0;
